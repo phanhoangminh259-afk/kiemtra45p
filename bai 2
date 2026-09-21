@@ -1,0 +1,26 @@
+<?php
+$products = array(
+    array("name" => "Laptop",   "price" => 15000000, "quantity" => 5),
+    array("name" => "Chuot",    "price" => 200000,   "quantity" => 20),
+    array("name" => "Ban phim", "price" => 500000,   "quantity" => 10)
+);
+ 
+echo "<h3>Danh sách sản phẩm</h3>";
+foreach ($products as $product) {
+    echo "Tên: " . $product["name"] . "<br>";
+    echo "Giá: " . $product["price"] . "<br>";
+    echo "Số lượng: " . $product["quantity"] . "<br>";
+    echo "-----------<br>";
+}
+ 
+function tinhTong($products) {
+    $tong = 0;
+    foreach ($products as $product) {
+        $tong = $tong + $product["price"] * $product["quantity"];
+    }
+    return $tong;
+}
+ 
+echo "Tổng giá trị: " . tinhTong($products);
+?>
+ 
